@@ -1,3 +1,4 @@
+import os
 import pybaseball
 # test pandas ai
 import pandas as pd
@@ -12,6 +13,6 @@ data_df = pd.DataFrame(data)
 
 from pandasai.llm.starcoder import Starcoder
 # Starcoder
-llm = Starcoder(api_token="***REMOVED***")
+llm = Starcoder(api_token=os.environ["HF_TOKEN"])
 pandas_ai = PandasAI(llm)
 pandas_ai(data_df,'Who are home run leaders? ')
